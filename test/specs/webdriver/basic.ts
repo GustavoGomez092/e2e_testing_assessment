@@ -16,12 +16,13 @@ describe('automationpractice.com page', () => {
     const emailInput = browser.$('#email')
     const passwordInput = browser.$('#passwd')
     const loginButton = browser.$('#SubmitLogin')
+
     log.debug('Checking that the email input exists')
-    expectChai(emailInput).to.exist
+    expectChai(emailInput.isExisting()).to.be.true
     log.debug('Checking that the password input exists')
-    expectChai(passwordInput).to.exist
+    expectChai(passwordInput.isExisting()).to.be.true
     log.debug('Checking that the login button exists')
-    expectChai(loginButton).to.exist
+    expectChai(loginButton.isExisting()).to.be.true
   })
 
   it('should have empty input fields', () => {
@@ -54,16 +55,18 @@ describe('automationpractice.com page', () => {
     expect(passwordInput).toHaveAttribute('value', Home.loginInfo.password)
   })
 
-  it('should allow me to login', () => {
+  it('should allow me to click Sign in', () => {
     const loginButton = browser.$('#SubmitLogin')
     log.debug('Clicking the login button')
     loginButton.click()
   })
 
   it('should be a successful login', () => {
+    const AcctBody = browser.$('#my-account')
     const alertMessage = browser.$('.alert-danger')
     log.debug('Checking if login was successful')
-    expectChai(alertMessage).to.not.exist;
+    expectChai(alertMessage.isExisting()).to.be.false
+    expectChai(AcctBody.isExisting()).to.be.true
   })
 
 })
