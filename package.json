@@ -22,7 +22,7 @@
     "@wdio/spec-reporter": "^6.7.0",
     "@wdio/sync": "^6.7.2",
     "chai": "^4.2.0",
-    "chromedriver": "^86.0.0",
+    "chromedriver": "^88.0.0",
     "eslint": "^7.13.0",
     "html-dnd": "^1.2.1",
     "ts-node": "^9.0.0",
